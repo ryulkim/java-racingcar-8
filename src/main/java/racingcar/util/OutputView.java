@@ -8,7 +8,7 @@ public class OutputView {
     }
 
     public static void printCarStatus(RacingCar racingCar) {
-        String output=String.format("%s : %s", racingCar.getName(),
+        String output = String.format("%s : %s", racingCar.getName(),
                 "-".repeat(racingCar.getStatus()));
         print(output);
     }

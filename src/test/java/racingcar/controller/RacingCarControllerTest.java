@@ -13,7 +13,7 @@ public class RacingCarControllerTest {
         RacingCar racingCar1 = new RacingCar("aa");
         RacingCar racingCar2 = new RacingCar("aa");
 //        racingCar1.incrementStatus();
-
+        
         racingCarController.racingCars.add(racingCar1);
         racingCarController.racingCars.add(racingCar2);
 
