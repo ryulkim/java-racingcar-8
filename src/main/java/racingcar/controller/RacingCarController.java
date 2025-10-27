@@ -26,16 +26,6 @@ public class RacingCarController {
         InputHandler.close();
     }
 
-    public int inputNum() {
-        OutputView.print("시도할 횟수는 몇 회인가요?");
-        return InputParser.parseInt(InputHandler.readLine());
-    }
-
-    public String[] inputCarNames() {
-        OutputView.print("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        return InputParser.parseCarNames(InputHandler.readLine());
-    }
-
     public ArrayList<String> getWinners() {
         AtomicInteger max = new AtomicInteger();
         ArrayList<String> winners = new ArrayList<>();
@@ -50,6 +40,16 @@ public class RacingCarController {
         }));
 
         return winners;
+    }
+
+    private int inputNum() {
+        OutputView.print("시도할 횟수는 몇 회인가요?");
+        return InputParser.parseInt(InputHandler.readLine());
+    }
+
+    private String[] inputCarNames() {
+        OutputView.print("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        return InputParser.parseCarNames(InputHandler.readLine());
     }
 
     private void game(int number) {
