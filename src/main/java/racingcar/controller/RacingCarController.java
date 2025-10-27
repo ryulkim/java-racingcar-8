@@ -71,11 +71,8 @@ public class RacingCarController {
     }
 
     private void createRacingCars(String[] carNames) {
-        Arrays.stream(carNames).map(this::createCar).forEach(racingCars::add);
+        Arrays.stream(carNames).map(RacingCar::createCar).forEach(racingCars::add);
     }
 
-    private RacingCar createCar(String carName) {
-        return new RacingCar(carName);
-    }
 
 }

@@ -8,6 +8,10 @@ public class RacingCar {
         this.name = name;
     }
 
+    public static RacingCar createCar(String carName) {
+        return new RacingCar(carName);
+    }
+
     public void incrementStatus() {
         status++;
     }
