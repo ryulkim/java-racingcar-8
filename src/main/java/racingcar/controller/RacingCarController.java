@@ -17,7 +17,7 @@ public class RacingCarController {
     }
 
     public void run() {
-        createRacingCars(inputCarNames());
+        initRacingCars(inputCarNames());
         game(inputNum());
 
         ArrayList<String> winners = getWinners();
@@ -70,7 +70,7 @@ public class RacingCarController {
         });
     }
 
-    private void createRacingCars(String[] carNames) {
+    private void initRacingCars(String[] carNames) {
         Arrays.stream(carNames).map(RacingCar::createCar).forEach(racingCars::add);
     }
 
