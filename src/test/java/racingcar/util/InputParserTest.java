@@ -1,6 +1,7 @@
 package racingcar.util;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class InputParserTest {
@@ -38,4 +39,18 @@ public class InputParserTest {
         //then
         Assertions.assertEquals(num,3);
     }
+
+    @Test
+    public void 예외_시도_횟수가_정수가_아닐_경우(){
+        //given
+        String input="aa  as";
+
+        //when
+
+        //then
+        Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseInt(input));
+        
+        
+    }
+
 }

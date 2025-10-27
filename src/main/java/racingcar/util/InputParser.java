@@ -19,6 +19,11 @@ public class InputParser {
     }
 
     public static int parseInt(String input) {
-        return Integer.parseInt(input.trim());
+        try {
+            return Integer.parseInt(input.trim());
+        }
+        catch (NumberFormatException e) {
+            throw new IllegalArgumentException("정수가 아닌 입력값을 받았습니다.");
+        }
     }
 }
