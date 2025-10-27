@@ -1,12 +1,12 @@
 package racingcar.controller;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.Arrays;
 import racingcar.model.RacingCar;
 import racingcar.util.InputHandler;
 import racingcar.util.InputParser;
 import racingcar.util.OutputView;
-import racingcar.util.RandomNumberGenerator;
 
 public class RacingCarController {
     ArrayList<RacingCar> racingCars;
@@ -36,7 +36,7 @@ public class RacingCarController {
 
     private void round(){
         racingCars.forEach(racingCar -> {
-            int num=RandomNumberGenerator.randomNumber(0,9);
+            int num= Randoms.pickNumberInRange(0,9);
             if(num>=4){
                 racingCar.incrementStatus();
             }
