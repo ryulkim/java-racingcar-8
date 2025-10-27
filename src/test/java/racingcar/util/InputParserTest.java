@@ -27,6 +27,17 @@ public class InputParserTest {
         //then
         Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseCarNames(input));
     }
+    
+    @Test
+    public void 예외_자동차_이름이_5자리_이상인_경우() {
+        // given
+        String input="pobippobi,jun";
+        
+        // when
+        
+        // then
+        Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseCarNames(input));
+    }
 
     @Test
     public void 정상_입력_시도_횟수(){

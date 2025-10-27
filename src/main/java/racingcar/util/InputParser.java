@@ -14,6 +14,9 @@ public class InputParser {
             if (!uniqueNames.add(names[i])) {
                 throw new IllegalArgumentException("중복된 자동차 이름이 있습니다: " + names[i]);
             }
+            if(!validLess(names[i],5)){
+                throw new IllegalArgumentException("자동차 이름은 5자리 이하여야 합니다.");
+            }
         }
         return names;
     }
@@ -29,5 +32,9 @@ public class InputParser {
         catch (NumberFormatException e) {
             throw new IllegalArgumentException("정수가 아닌 입력값을 받았습니다.");
         }
+    }
+
+    private static boolean validLess(String input, int length) {
+        return input.length() <= length;
     }
 }
