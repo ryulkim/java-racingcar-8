@@ -6,6 +6,7 @@ import racingcar.model.RacingCar;
 import racingcar.util.InputHandler;
 import racingcar.util.InputParser;
 import racingcar.util.OutputView;
+import racingcar.util.RandomNumberGenerator;
 
 public class RacingCarController {
     ArrayList<RacingCar> racingCars;
@@ -21,9 +22,25 @@ public class RacingCarController {
         createRacingCars(carNames);
 
         OutputView.print("시도할 횟수는 몇 회인가요?");
-        InputHandler.readLine();
+        int num=InputParser.parseInt(InputHandler.readLine());
+        game(num);
 
         InputHandler.close();
+    }
+
+    private void game(int number){
+        for(int i=0;i<number;i++){
+            round();
+        }
+    }
+
+    private void round(){
+        racingCars.forEach(racingCar -> {
+            int num=RandomNumberGenerator.randomNumber(0,9);
+            if(num>=4){
+                racingCar.incrementStatus();
+            }
+        });
     }
 
     private void createRacingCars(String[] carNames) {

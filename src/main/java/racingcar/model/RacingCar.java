@@ -7,4 +7,8 @@ public class RacingCar {
     public RacingCar(String name) {
         this.name = name;
     }
+
+    public void incrementStatus() {
+        status++;
+    }
 }
