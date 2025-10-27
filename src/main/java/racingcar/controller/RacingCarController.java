@@ -26,7 +26,8 @@ public class RacingCarController {
         int num=InputParser.parseInt(InputHandler.readLine());
         game(num);
 
-
+        ArrayList<String> winners=getWinners();
+        OutputView.print(String.format("%s : %s","최종 우승자",String.join(", ",winners)));
 
         InputHandler.close();
     }
