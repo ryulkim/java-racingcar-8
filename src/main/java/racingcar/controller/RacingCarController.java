@@ -17,19 +17,23 @@ public class RacingCarController {
     }
 
     public void run() {
-        OutputView.print("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        String[] carNames = InputParser.parseCarNames(InputHandler.readLine());
-
-        createRacingCars(carNames);
-
-        OutputView.print("시도할 횟수는 몇 회인가요?");
-        int num = InputParser.parseInt(InputHandler.readLine());
-        game(num);
+        createRacingCars(inputCarNames());
+        game(inputNum());
 
         ArrayList<String> winners = getWinners();
         OutputView.print(String.format("%s : %s", "최종 우승자", String.join(", ", winners)));
 
         InputHandler.close();
+    }
+
+    public int inputNum() {
+        OutputView.print("시도할 횟수는 몇 회인가요?");
+        return InputParser.parseInt(InputHandler.readLine());
+    }
+
+    public String[] inputCarNames() {
+        OutputView.print("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        return InputParser.parseCarNames(InputHandler.readLine());
     }
 
     public ArrayList<String> getWinners() {
