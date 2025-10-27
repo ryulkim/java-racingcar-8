@@ -49,8 +49,17 @@ public class InputParserTest {
 
         //then
         Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseInt(input));
+    }
+    
+    @Test
+    public void 예외_시도_횟수가_0_이하인_경우() {
+        // given
+        String input="0";
         
+        // when
         
+        // then
+        Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseInt(input));
     }
 
 }

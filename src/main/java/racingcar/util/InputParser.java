@@ -20,6 +20,10 @@ public class InputParser {
 
     public static int parseInt(String input) {
         try {
+            int result = Integer.parseInt(input);
+            if (result <= 0) {
+                throw new IllegalArgumentException("시도 횟수가 0 이하일 수는 없습니다.");
+            }
             return Integer.parseInt(input.trim());
         }
         catch (NumberFormatException e) {
