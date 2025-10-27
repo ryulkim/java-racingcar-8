@@ -17,4 +17,8 @@ public class InputParser {
         }
         return names;
     }
+
+    public static int parseInt(String input) {
+        return Integer.parseInt(input.trim());
+    }
 }

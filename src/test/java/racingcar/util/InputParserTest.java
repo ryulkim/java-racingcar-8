@@ -26,4 +26,16 @@ public class InputParserTest {
         //then
         Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseCarNames(input));
     }
+
+    @Test
+    public void 정상_입력_시도_횟수(){
+        //given
+        String input="3";
+
+        //when
+        int num=InputParser.parseInt(input);
+
+        //then
+        Assertions.assertEquals(num,3);
+    }
 }
