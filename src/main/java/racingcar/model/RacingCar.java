@@ -11,4 +11,12 @@ public class RacingCar {
     public void incrementStatus() {
         status++;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getStatus() {
+        return status;
+    }
 }

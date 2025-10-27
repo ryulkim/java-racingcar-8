@@ -29,8 +29,11 @@ public class RacingCarController {
     }
 
     private void game(int number){
+        OutputView.print("실행 결과");
         for(int i=0;i<number;i++){
             round();
+            racingCars.forEach((OutputView::printCarStatus));
+            OutputView.print("");
         }
     }
 
