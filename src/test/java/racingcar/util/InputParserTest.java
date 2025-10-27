@@ -15,4 +15,15 @@ public class InputParserTest {
         //then
         Assertions.assertArrayEquals(output,new String[]{"pobi","woni","jun"});
     }
+
+    @Test
+    public void 예외_자동차_이름이_중복됐을_경우(){
+        //given
+        String input="pobi,pobi,jun";
+
+        //when
+
+        //then
+        Assertions.assertThrows(IllegalArgumentException.class , ()->InputParser.parseCarNames(input));
+    }
 }
