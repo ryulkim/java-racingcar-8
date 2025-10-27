@@ -3,6 +3,7 @@ package racingcar.controller;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 import racingcar.model.RacingCar;
 import racingcar.util.InputHandler;
 import racingcar.util.InputParser;
@@ -25,7 +26,25 @@ public class RacingCarController {
         int num=InputParser.parseInt(InputHandler.readLine());
         game(num);
 
+
+
         InputHandler.close();
+    }
+
+    public ArrayList<String> getWinners(){
+        AtomicInteger max= new AtomicInteger();
+        ArrayList<String> winners = new ArrayList<>();
+
+        racingCars.sort((a,b)->Integer.compare(b.getStatus(), a.getStatus()));
+
+        racingCars.forEach((racingCar -> {
+            if(max.get() <=racingCar.getStatus()){
+                max.set(racingCar.getStatus());
+                winners.add(racingCar.getName());
+            }
+        }));
+
+        return winners;
     }
 
     private void game(int number){
